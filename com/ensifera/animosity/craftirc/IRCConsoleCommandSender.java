@@ -11,7 +11,7 @@ import org.bukkit.command.ConsoleCommandSender;
  *
  */
 public class IRCConsoleCommandSender extends ConsoleCommandSender {
-    private boolean op = false;
+    private Boolean op = false;
     private RelayedMessage ircConCmd = null;
     
  
@@ -21,13 +21,13 @@ public class IRCConsoleCommandSender extends ConsoleCommandSender {
      * @param ircConCmdMsg - RelayedMessage
      * @param isOp - Boolean
      */
-    public IRCConsoleCommandSender(Server server, RelayedMessage ircConCmd, boolean isOp) {
+    public IRCConsoleCommandSender(Server server, RelayedMessage ircConCmd, Boolean isOp) {
         super(server);
         this.ircConCmd = ircConCmd;
         this.op = isOp;
     }
     
-    public boolean isOp() { return this.op == null ? true : this.op; }
+    public boolean isOp() { return this.op == null ? true : this.op; } // should this just be return true; ?
     
     @Override
     public boolean isPlayer() { return false; }
